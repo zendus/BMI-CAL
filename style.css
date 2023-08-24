@@ -1,0 +1,95 @@
+/* Reset default margin and padding */
+body, h1, form {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+.background-image {
+    flex: 1; /* Occupy half the screen */
+    background-image: url('photo.jpeg'); /* Replace with actual image path */
+    background-size: cover;
+    background-position: center;
+}
+
+#apiForm {
+    flex: 1; /* Occupy half the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    color: black; /* Text color */
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Rest of your form styles */
+
+#apiForm input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s; /* Add a smooth transition effect */
+}
+
+#apiForm input[type="text"]:focus {
+    border-color: black;
+}
+
+#apiForm button[type="submit"] {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#apiForm button[type="submit"]:hover {
+    background-color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.flash-animation {
+    animation: flash 1.2s infinite;
+}
+
+#response:empty {
+    display: none; /* Hide the container if the response div is empty */
+}
+
+#response {
+    /* Existing styles for positioning, etc. */
+    margin-bottom: 30px;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    background-color: #008577;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #eae4e4;
+    font-weight: bold;
+}

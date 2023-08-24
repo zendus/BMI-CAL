@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="background-image"></div>
+        <form id="apiForm" action="http://127.0.0.1:5000/api/endpoint" method="POST">
+            <h1>Body Mass Index Calculator</h1>
+            <input type="text" id="height" name="height" placeholder="Your Height in meters" required><br><br>
+            
+            <input type="text" id="weight" name="weight" placeholder="Your Weight in Kg" ><br><br>
+            
+            <div id="response" class="flash-animation"></div>
+            
+            <button type="submit">Check BMI</button>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
