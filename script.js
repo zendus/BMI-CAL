@@ -17,8 +17,7 @@ document.getElementById("apiForm").addEventListener("submit", function(event) {
     .then(response => response.json())
     .then(data => {
         const responseDiv = document.getElementById("response");
-        bmi = JSON.stringify(data["bmi"])
-        responseDiv.innerHTML = `Your Body Mass Index is ${bmi}`;
+        responseDiv.innerHTML = `Your Body Mass Index is ${data["bmi"]} <br> You are ${data["status"]}`;
 
     })
     .catch(error => {

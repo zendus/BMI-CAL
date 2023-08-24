@@ -12,8 +12,20 @@ def handle_post_request():
         # BMI (BODY MASS INDEX) = WEIGHT(KG) / HEIGHT SQUARED
         user_height = float(data["height"])
         user_weight = float(data["weight"])
-        bmi = user_weight / user_height ** 2
-        response = {"bmi": round(bmi, 2)}
+        bmi = round(user_weight / user_height ** 2, 2)
+        status = ""
+
+        if bmi < 18.5:
+            status = "UNDERWEIGHT"
+        elif bmi >= 18.5 and bmi <= 24.9:
+            status = "NORMAL"
+        elif bmi >= 25 and bmi <= 29.9:
+            status = "OVERWEIGHT"
+        else:
+            status = "OBESE"
+
+        response = {"bmi": bmi, "status": status}
+        print(bmi, status)
         return jsonify(response), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 400
